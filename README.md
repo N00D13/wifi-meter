@@ -4,3 +4,5 @@ Wifi-meter
 Wifi-meter is an art project that shows how many wifi-networks are in the environemnt.
 A Raspberry Pi is measuring the wifi-networks and controls three PCF8574AP Philips IIC port expander.
 The signals from the port expanders goes to three ULN2803 darlington transisor arrays that drives 24 5mm blue leds. 
+
+![Alt text](https://github.com/hsync/wifi-meter/blob/master/img/raspi_pinout.jpg)
