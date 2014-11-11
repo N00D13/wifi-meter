@@ -18,8 +18,7 @@ bus = smbus.SMBus(1)		#0=/dev/i2c-0; 1=/dev/i2c-1
 #and calc. the values for the portexpander  
 def setLedBar(i):
 
-	print(i)
-	
+	print "\n"
 	if i>8:
 		print "DEV_0: 255"
 		bus.write_byte(DEVICE_0, 0xff)
