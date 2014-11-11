@@ -4,7 +4,9 @@ import smbus
 import start
 
 pmName = input('start.py')
-pm = __import__(pmName)
+pm = __import__(essid)
+
+print(pm)
 
 print(dir(pm))  
 
