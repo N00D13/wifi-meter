@@ -1,6 +1,12 @@
 #!/usr/bin/env python2.7
 
-import smbus 
+import smbus
+import start
+
+pmName = input('start.py')
+pm = __import__(pmName)
+
+print(dir(pm))  
 
 DEVICE_0 = 0x38                           
 DEVICE_1 = 0x39
