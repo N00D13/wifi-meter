@@ -18,7 +18,7 @@ bus = smbus.SMBus(1)		#0=/dev/i2c-0; 1=/dev/i2c-1
 #and calc. the values for the portexpander  
 def setLedBar(i):
 
-	print "\n"
+	
 	if i>8:
 		print "DEV_0: 255"
 		bus.write_byte(DEVICE_0, 0xff)
@@ -53,7 +53,9 @@ def setLedBar(i):
 		print "DEV_2:",0
 		bus.write_byte(DEVICE_2, 0)
 		
-		
+	print "\n"
+
+	
 while True:
 	#Starting the iwlist process.
 	proc = subprocess.Popen('iwlist  scan 2>/dev/null', shell=True, stdout=subprocess.PIPE, )
