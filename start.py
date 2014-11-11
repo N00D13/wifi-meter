@@ -2,7 +2,60 @@
 import subprocess
 import re
 import time
+<<<<<<< HEAD
+import smbus
+
+
+DEVICE_0 = 0x38                           
+DEVICE_1 = 0x39
+DEVICE_2 = 0x3A
+
+bus = smbus.SMBus(1)		# 0=/dev/i2c-0;  1=/dev/i2c-1
+
+
+def setLedBar(i):
+
+	print(i)
+	
+	if i>8:
+		print "DEV_0: 255"
+		bus.write_byte(DEVICE_0, 0xff)
+		i-=8
+		
+		if i>8:
+			print "DEV_1: 255"
+			bus.write_byte(DEVICE_1, 0xff)
+			i-=8
+
+			if i>=8:
+				print "DEV_2: 255"
+				bus.write_byte(DEVICE_2, 0xff)
+				
+			else:
+				i=(2**i)-1
+				print "DEV_2:",i
+				bus.write_byte(DEVICE_2, i)
+
+		else:
+	                i=(2**i)-1
+	                print "DEV_1:",i
+			bus.write_byte(DEVICE_1, i)
+			print "DEV_2:",0
+			bus.write_byte(DEVICE_2, 0)
+	else:
+		i=(2**i)-1
+		print "DEV_0:",i
+		bus.write_byte(DEVICE_0, i)
+		print "DEV_1:",0
+		bus.write_byte(DEVICE_1, 0)
+		print "DEV_2:",0
+		bus.write_byte(DEVICE_2, 0)
+		
+		
+
+=======
 import iic.py
+>>>>>>> d99985b67333f3a73ffd0ccfbe234d32b8366cf7
 
 while True:
 	proc = subprocess.Popen('iwlist  scan 2>/dev/null', shell=True, stdout=subprocess.PIPE, )
@@ -31,7 +84,12 @@ while True:
 
 	print "Aviable Essid's"
 	print len (essid)
+<<<<<<< HEAD
+	
+	setLEDBar(len(essid))
+=======
 
 
 	iic.setLedBar()
+>>>>>>> d99985b67333f3a73ffd0ccfbe234d32b8366cf7
 	  	
