@@ -5,13 +5,17 @@ import time
 import smbus
 
 
+#Define Device adresses
 DEVICE_0 = 0x38                           
 DEVICE_1 = 0x39
 DEVICE_2 = 0x3A
 
-bus = smbus.SMBus(1)		# 0=/dev/i2c-0;  1=/dev/i2c-1
+#Open SMBus on /dev/i2c-1
+bus = smbus.SMBus(1)		#0=/dev/i2c-0; 1=/dev/i2c-1
 
 
+#This function manage and controls the leds
+#and calc. the values for the portexpander  
 def setLedBar(i):
 
 	print(i)
@@ -87,7 +91,7 @@ while True:
 	print "Aviable Essid's"
 	print len (essid)
 	
-	#
+	#Call function to control and set the leds
 	setLedBar(len(essid))
 
 	  	
