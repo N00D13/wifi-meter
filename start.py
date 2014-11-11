@@ -2,7 +2,6 @@
 import subprocess
 import re
 import time
-<<<<<<< HEAD
 import smbus
 
 
@@ -52,11 +51,6 @@ def setLedBar(i):
 		bus.write_byte(DEVICE_2, 0)
 		
 		
-
-=======
-import iic.py
->>>>>>> d99985b67333f3a73ffd0ccfbe234d32b8366cf7
-
 while True:
 	proc = subprocess.Popen('iwlist  scan 2>/dev/null', shell=True, stdout=subprocess.PIPE, )
 	stdout_str = proc.communicate()[0]
@@ -84,12 +78,7 @@ while True:
 
 	print "Aviable Essid's"
 	print len (essid)
-<<<<<<< HEAD
-	
-	setLEDBar(len(essid))
-=======
 
+	setLedBar(len(essid))
 
-	iic.setLedBar()
->>>>>>> d99985b67333f3a73ffd0ccfbe234d32b8366cf7
 	  	
