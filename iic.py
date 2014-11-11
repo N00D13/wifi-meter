@@ -58,4 +58,4 @@ bus = smbus.SMBus(1)		# 0=/dev/i2c-0;  1=/dev/i2c-1
 
 
 #Example
-setLedBar(13)
+setLedBar(13) 

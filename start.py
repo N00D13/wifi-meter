@@ -2,6 +2,7 @@
 import subprocess
 import re
 import time
+import iic.py
 
 while True:
 	proc = subprocess.Popen('iwlist  scan 2>/dev/null', shell=True, stdout=subprocess.PIPE, )
@@ -30,4 +31,7 @@ while True:
 
 	print "Aviable Essid's"
 	print len (essid)
+
+
+	iic.setLedBar()
 	  	
