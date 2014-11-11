@@ -52,11 +52,17 @@ def setLedBar(i):
 		
 		
 while True:
+	#Starting the iwlist process.
 	proc = subprocess.Popen('iwlist  scan 2>/dev/null', shell=True, stdout=subprocess.PIPE, )
+	
 	stdout_str = proc.communicate()[0]
 	stdout_list=stdout_str.split('\n')
+	
+	#EssID and Adress Array's
 	essid=[]
 	address=[]
+	
+	#For each Access Point you got information about the Channel ESSID etc.
 	for line in stdout_list:
     		line=line.strip()
     		match=re.search('ESSID:"(\S+)"',line)
@@ -68,6 +74,8 @@ while True:
 
 	""" 
 	For Debuging
+
+	Printing the Value's
 	"""
 
 	print essid
@@ -78,7 +86,8 @@ while True:
 
 	print "Aviable Essid's"
 	print len (essid)
-
+	
+	#
 	setLedBar(len(essid))
 
 	  	
