@@ -33,12 +33,17 @@ def setLedBar(i):
 		else:
 	                i=(2**i)-1
 	                print "DEV_1:",i
-			bus.write_byte(DEVICE_1 , i)
-
+			bus.write_byte(DEVICE_1, i)
+			print "DEV_2:",0
+			bus.write_byte(DEVICE_2, 0)
 	else:
 		i=(2**i)-1
 		print "DEV_0:",i
 		bus.write_byte(DEVICE_0, i)
+		print "DEV_1:",0
+		bus.write_byte(DEVICE_1, 0)
+		print "DEV_2:",0
+		bus.write_byte(DEVICE_2, 0)
 
 
 bus = smbus.SMBus(1)		# 0=/dev/i2c-0;  1=/dev/i2c-1
